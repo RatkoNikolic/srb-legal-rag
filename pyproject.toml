@@ -1,0 +1,51 @@
+[project]
+name = "srb-legal-rag"
+version = "0.0.1"
+description = "srb-legal-rag — a Serbian legal assistant and retrieval benchmark: pluggable ingestion, five instrumented retrieval architectures (naive RAG, advanced RAG, typed-KG/GraphRAG, agentic, gold-context ceiling) over one shared temporal knowledge base, and a task-grounded evaluation harness."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Ratko Nikolić" }]
+dependencies = [
+    "pydantic>=2.7",
+    # httpx2 = the maintained httpx (upstream unmaintained since 2026-02;
+    # stewardship moved to Pydantic Services under this name). API-compatible;
+    # starlette's TestClient prefers it, which retires the deprecation shim.
+    "httpx2>=2",
+    # the official Gemini SDK — structured outputs via response_json_schema;
+    # brings upstream `httpx` back as ITS transitive transport (import-name
+    # distinct from httpx2, so both coexist; our own code stays on httpx2)
+    "google-genai>=2.16",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "python-dotenv>=1.0",
+    # pinned band: an open range against a fast-moving 0.x store is the same
+    # landmine an unpinned graph store was (the FTS default engine flipped
+    # mid-0.x, silently changing lexical retrieval behaviour)
+    "lancedb~=0.33.0",
+    # transitive-of-record: lancedb's heaviest floating transitive — banded to
+    # the tested major so `uv pip install -e` (which ignores uv.lock) can't
+    # silently jump it (vector_store_reassessment.md §6.1)
+    "pyarrow>=16,<25",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+]
+
+[project.optional-dependencies]
+# ruff capped: 0.16.0 flips the default rule set from 59 to 413 rules — an
+# uncapped upgrade floods lint; lift deliberately (with an explicit select).
+dev = ["pytest>=8", "ruff>=0.15,<0.16"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kl_core", "src/lexsr"]
+
+# (the old starlette-TestClient httpx deprecation shim is gone — the repo is
+# on httpx2 now, which the TestClient uses natively)
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]

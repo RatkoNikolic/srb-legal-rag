@@ -1,0 +1,29 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+==========================================================
+
+The benchmark question sets in this directory — every `*.jsonl` file, comprising
+the questions, the gold answers, the gold citation sets and the per-item labels —
+are licensed under the Creative Commons Attribution 4.0 International License.
+
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the license, and
+indicate whether changes were made.
+
+Suggested attribution:
+
+    srb-legal-rag benchmark question sets, Ratko Nikolić, CC BY 4.0.
+    https://github.com/RatkoNikolic/srb-legal-rag
+
+Note on the underlying statutes
+-------------------------------
+
+The gold answers quote and cite Serbian statutory law. Statute text is excluded
+from copyright under Zakon o autorskom i srodnim pravima čl. 6 and is therefore
+not subject to this or any license. What is licensed here is the original
+material: the question set, the authored answers, the selection and arrangement
+of citations, and the difficulty and capability labels.
+
+The software in this repository is licensed separately, under Apache-2.0 — see
+the LICENSE file at the repository root.

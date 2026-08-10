@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+title: >-
+  srb-legal-rag: five retrieval architectures over one temporal
+  Serbian-law knowledge base
+message: If you use this software or its benchmark question sets, please cite it.
+type: software
+authors:
+  - family-names: Nikolić
+    given-names: Ratko
+    email: ratkonikolic92@gmail.com
+  - family-names: Mirković
+    given-names: Saša
+    alias: SasaMirkovic
+    website: https://github.com/SasaMirkovic
+repository-code: https://github.com/RatkoNikolic/srb-legal-rag
+license: Apache-2.0
+date-released: "2026-08-10"
+keywords:
+  - retrieval-augmented generation
+  - legal NLP
+  - benchmark
+  - knowledge graph
+  - temporal validity
+  - Serbian
+abstract: >-
+  A Serbian legal question-answering system and an exploratory benchmark built on
+  it: the same legal question answered by five instrumented retrieval
+  architectures — context stuffing, naive RAG, advanced hybrid retrieval, a typed
+  temporal knowledge graph, and a bounded agentic loop — over one shared knowledge
+  base, with accuracy, provenance fidelity, temporal correctness, latency and cost
+  measured side by side. Every retrievable unit carries its law, article, version
+  and validity interval, so a citation can be checked and a repealed provision can
+  be told apart from one in force. Includes a negative result: on this corpus
+  typed graph structure is statistically indistinguishable from strong flat
+  retrieval. Saša Mirković (https://github.com/SasaMirkovic) co-designed the
+  ingestion pipeline and the knowledge base, and advised on the retrieval
+  architecture and on the evaluation design. The benchmark question sets
+  under goldens/ are licensed CC BY 4.0 and are cited separately from the code.

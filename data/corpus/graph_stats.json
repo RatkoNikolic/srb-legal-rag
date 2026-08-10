@@ -1,0 +1,20 @@
+{
+  "nodes": 21341,
+  "semantic_edges": 12047,
+  "mean_out_degree": 0.565,
+  "isolated_nodes": 17291,
+  "isolated_pct": 81.0,
+  "cross_law_edges": 264,
+  "cross_law_pct": 2.2,
+  "max_out_degree": 126,
+  "expansion_edges": 16090,
+  "expansion_mean_out_degree": 0.754,
+  "expansion_isolated_pct": 70.6,
+  "arm_reachable_pct": 29.4,
+  "reference_edges": 3547,
+  "in_corpus_reference_edges": 330,
+  "closure_pct": 9.3,
+  "graph_completeness_pct": 100.0,
+  "materialized_target_pct": 28.2,
+  "stub_nodes": 1707
+}

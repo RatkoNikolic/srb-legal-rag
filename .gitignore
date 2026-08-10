@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.env
+# data/ is TRACKED for cross-machine sync (git pull = total sync). Text
+# source-of-record (corpus HTML/manifest/chunks) is plain git; the large binary
+# artifacts (index, KG, run telemetry) ride Git LFS — see .gitattributes.
+# Only genuinely throwaway / regenerable-from-source bits stay ignored:
+data/raw/
+data/evals/
+data/kg.tmp/
+data/**/*.tmp
+data/*-wal
+data/*-shm
+
+# Private field-intel / sensitive scratch — never shipped public
+/private/
+
+# The knowledge base is NOT shipped and must never be committed: statute text,
+# derived stores and their metadata are all products of a local rebuild.
+data/corpus/*.html
+data/index/
+data/kg.sqlite
+data/corpus/chunks.jsonl
+data/corpus/references.jsonl
